@@ -22,14 +22,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Inicializar componentes
         viewPager = findViewById(R.id.viewPager);
         txtTema = findViewById(R.id.txtTema);
         indicatorLayout = findViewById(R.id.indicator_layout);
         Button btnJogar = findViewById(R.id.btnJogar);
 
-        // Configurar itens do carrossel
+        // itens do carrossel
         temaItems = new ArrayList<>();
         temaItems.add(new TemaItem(R.drawable.icon_geral, "GERAL"));
         temaItems.add(new TemaItem(R.drawable.icon_historia, "HISTÓRIA"));
@@ -45,11 +43,9 @@ public class MainActivity extends AppCompatActivity {
         temaItems.add(new TemaItem(R.drawable.icon_filosofia, "FILOSOFIA"));
         temaItems.add(new TemaItem(R.drawable.icon_sociologia, "SOCIOLOGIA"));
 
-        // Configurar adapter
+
         temaAdapter = new TemaAdapter(temaItems);
         viewPager.setAdapter(temaAdapter);
-
-        // Configurar indicadores
         setupIndicators();
 
         // Listener para mudança de página
@@ -62,21 +58,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Listener para o botão JOGAR
         btnJogar.setOnClickListener(v -> {
             int currentPosition = viewPager.getCurrentItem();
             String temaSelecionado = temaItems.get(currentPosition).getNome();
-            // Aqui você pode iniciar a activity do quiz com o tema selecionado
+
         });
     }
 
     private void setupIndicators() {
-        indicatorLayout.removeAllViews(); // Limpa quaisquer views existentes
+        indicatorLayout.removeAllViews();
 
         View[] indicators = new View[temaItems.size()];
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                16, // Largura fixa
-                16  // Altura fixa
+                16,
+                16
         );
         params.setMargins(8, 0, 8, 0);
 
