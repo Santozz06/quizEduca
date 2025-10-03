@@ -2,6 +2,8 @@ package com.example.quizeduca;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,13 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         viewPager = findViewById(R.id.viewPager);
         txtTema = findViewById(R.id.txtTema);
         indicatorLayout = findViewById(R.id.indicator_layout);
         Button btnJogar = findViewById(R.id.btnJogar);
 
-        // itens do carrossel
         temaItems = new ArrayList<>();
+
+        // itens do carrossel
         temaItems.add(new TemaItem(R.drawable.icon_geral, "GERAL"));
         temaItems.add(new TemaItem(R.drawable.icon_historia, "HISTÓRIA"));
         temaItems.add(new TemaItem(R.drawable.icon_geografia, "GEOGRAFIA"));
@@ -42,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         temaItems.add(new TemaItem(R.drawable.icon_ed_fisica, "EDUCAÇÃO FÍSICA"));
         temaItems.add(new TemaItem(R.drawable.icon_filosofia, "FILOSOFIA"));
         temaItems.add(new TemaItem(R.drawable.icon_sociologia, "SOCIOLOGIA"));
-
 
         temaAdapter = new TemaAdapter(temaItems);
         viewPager.setAdapter(temaAdapter);
@@ -62,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
             int currentPosition = viewPager.getCurrentItem();
             String temaSelecionado = temaItems.get(currentPosition).getNome();
 
+            Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+            intent.putExtra("TEMA_SELECIONADO", temaSelecionado);
+
+            startActivity(intent);
         });
     }
 
