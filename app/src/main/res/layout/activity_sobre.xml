@@ -11,13 +11,15 @@
         android:orientation="vertical">
 
         <!-- Botão Voltar -->
-        <ImageView
+        <ImageButton
             android:id="@+id/btnVoltarSobre"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_arrow_back"
-            android:contentDescription="Voltar"
-            android:layout_marginBottom="8dp" />
+            android:contentDescription="Voltar">
+        </ImageButton>
+
 
         <!-- Título Sobre -->
         <TextView

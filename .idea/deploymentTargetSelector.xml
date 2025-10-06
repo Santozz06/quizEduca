@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-09-16T21:47:49.165763Z">
+        <DropdownSelection timestamp="2025-10-06T12:15:06.003895700Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\santos\.android\avd\tela.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Aluno\.android\avd\tela_API_34.avd" />
             </handle>
           </Target>
         </DropdownSelection>

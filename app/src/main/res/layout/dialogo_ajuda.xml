@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingStart="12dp"
-                android:text="Resposta correta."
+                android:text="A letra faz parte da palvra e esta na posição correta."
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingStart="12dp"
-                android:text="Sua resposta está relacionada, mas não é exatamente a correta."
+                android:text="A letra faz parte da palavra mas em outra posição."
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingStart="12dp"
-                android:text="Sua resposta não faz parte da solução."
+                android:text="A letra não faz parte da palavra."
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -124,7 +124,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Você tem um número limitado de tentativas para acertar.\nUma nova pergunta aparece a cada rodada."
+            android:text="Você tem 6 tentativas para acertar.\nUma nova pergunta aparece a cada rodada."
             android:textSize="15sp"
             android:textColor="#000000"
             android:layout_marginTop="12dp" />
