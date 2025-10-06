@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.gridlayout.widget.GridLayout;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,7 +75,52 @@ public class QuizActivity extends AppCompatActivity {
             txtTextoBase.setText("Nenhuma pergunta encontrada!");
             System.out.println("DEBUG: Nenhuma pergunta retornada do banco");
         }
+
+        ImageButton btnVoltar = findViewById(R.id.btnVoltar);
+        btnVoltar.setOnClickListener(v -> {
+            voltarParaTelaInicial();
+        });
+        ImageButton btnConfig = findViewById(R.id.btnConfig);
+        btnConfig.setOnClickListener(v -> {
+            androidx.appcompat.widget.PopupMenu popup = new androidx.appcompat.widget.PopupMenu(QuizActivity.this, v);
+            popup.getMenuInflater().inflate(R.menu.menu_config, popup.getMenu());
+
+            popup.setOnMenuItemClickListener(item -> {
+                int id = item.getItemId();
+                if (id == R.id.opcaoAjuda) {
+                    mostrarDialogoAjuda();
+                    return true;
+                } else if (id == R.id.opcaoSobre) {
+                    abrirTelaSobre();
+                    return true;
+                }
+                return false;
+            });
+
+            popup.show();
+        });
     }
+    private void voltarParaTelaInicial() {
+        Intent intent = new Intent(QuizActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+    private void mostrarDialogoAjuda() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialogo_ajuda, null);
+        builder.setView(dialogView);
+
+        AlertDialog dialog = builder.create();
+        dialog.setCancelable(true);
+
+        dialog.show();
+    }
+    private void abrirTelaSobre() {
+        Intent intent = new Intent(QuizActivity.this, SobreActivity.class);
+        startActivity(intent);
+    }
+
 
     private void inicializarViews() {
         txtTemaQuiz = findViewById(R.id.txtTemaQuiz);
@@ -372,4 +419,5 @@ public class QuizActivity extends AppCompatActivity {
                 .replaceAll("[\\s\\-]", "")
                 .toUpperCase();
     }
+
 }

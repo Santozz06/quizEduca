@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3A8C9E"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Botão Voltar -->
+        <ImageView
+            android:id="@+id/btnVoltarSobre"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Voltar"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Título Sobre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sobre"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Texto Sobre -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_background"
+            android:padding="16dp"
+            android:text="QuizEduca+ é um jogo educativo inspirado no Termo.\nAqui, você testa seus conhecimentos do ensino médio de forma divertida: a cada rodada, recebe um texto ou pista sobre um conteúdo (História, Matemática, Biologia e muito mais) e precisa descobrir a palavra correta relacionada ao tema.\nQuanto mais você joga, mais aprende e revisa os conteúdos da escola de um jeito leve e interativo."
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Título Desenvolvedores -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desenvolvedores"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Lista Desenvolvedores -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Felipe Kauan dos Santos"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="felipekauan790@gmail.com"
+                android:textColor="#E65100"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fernanda dos Santos Sehn"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fernandasehn6@gmail.com"
+                android:textColor="#E65100"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Milena de Souza Suel"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="milenasouzasuiel8@gmail.com"
+                android:textColor="#E65100"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sofia Müller David"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sofiamulleri201@gmail.com"
+                android:textColor="#E65100"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
