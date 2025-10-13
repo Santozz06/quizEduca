@@ -10,7 +10,6 @@
     <!-- Cores para o jogo -->
     <color name="cinza_tecla">#808080</color>
     <color name="cinza_letra_inexistente">#3A3A3C</color>
-    <color name="amarelo_letra_posicao_errada">#B59F3B</color>
     <color name="verde_letra_posicao_correta">#538D4E</color>
     <color name="fundo_tela">#3A8C9E</color>
 </resources>

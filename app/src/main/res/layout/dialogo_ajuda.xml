@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingStart="12dp"
-                android:text="A letra faz parte da palvra e esta na posição correta."
+                android:text="A letra faz parte da palavra e está na posição correta."
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:background="#FFF9C4"
+            android:background="@color/colorSecondary"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
             android:clipToOutline="true">
@@ -78,7 +78,7 @@
                 android:text="~"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/bg_circle_yellow" />
+                android:background="@drawable/bg_circle_laranja" />
 
             <TextView
                 android:layout_width="0dp"
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:background="#FFCDD2"
+            android:background="@color/cinza_tecla"
             android:padding="12dp"
             android:layout_marginBottom="16dp"
             android:clipToOutline="true">
@@ -108,7 +108,7 @@
                 android:text="✗"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/bg_circle_red" />
+                android:background="@drawable/bg_circle_cinza" />
 
             <TextView
                 android:layout_width="0dp"
@@ -120,14 +120,51 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
+        <!-- MODOS DE JOGO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MODOS DE JOGO DISPONÍVEIS:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Nível Fácil -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• FÁCIL - Ideal para aprendizado\n  6 tentativas por pergunta"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Nível Médio -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• MÉDIO - Para quem já conhece o conteúdo\n  3 tentativas por pergunta"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Nível Difícil -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• DIFÍCIL - Desafio máximo!\n  Apenas 1 tentativa"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
         <!-- Rodapé -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Você tem 6 tentativas para acertar.\nUma nova pergunta aparece a cada rodada."
+            android:text="Uma nova pergunta a cada rodada."
             android:textSize="15sp"
             android:textColor="#000000"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 </ScrollView>
