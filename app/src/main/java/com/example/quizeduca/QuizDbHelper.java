@@ -138,7 +138,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
                 // FÍSICA
                 "('Física', 'Parte da física que estuda cargas elétricas em movimento e os efeitos que produzem, como correntes, campos magnéticos e circuitos. Fundamental para entender o funcionamento de motores, geradores e eletrônicos.', 'ELETRODINAMICA')," +
-                "('Física', 'Ramo da física que analisa a propagação de ondas, sejam elas mecânicas ou eletromagnéticas. Estuda fenômenos como reflexão, refração, difração e interferência, presentes no som, luz e rádio.', 'ONDULATORIA')," +
+                "('Física', 'Ramo da física que analaiasa a propagação de ondas, sejam elas mecânicas ou eletromagnéticas. Estuda fenômenos como reflexão, refração, difração e interferência, presentes no som, luz e rádio.', 'ONDULATORIA')," +
                 "('Física', 'Área que investiga o comportamento da luz, sua propagação, reflexão e refração. Aplicada em instrumentos como lentes, telescópios, microscópios e no estudo de cores e imagens.', 'OPTICA')," +
                 "('Física', 'Conceito central da mecânica que relaciona a intensidade de uma interação à massa e à aceleração de um corpo. Permite calcular movimentos e entender como objetos respondem a empurrões ou puxões.', 'FORCA')," +
                 "('Física', 'Cientista conhecido pela experiência com tubos cheios de mercúrio, que permitiu medir pressão atmosférica. Inventou o barômetro e contribuiu para o estudo de fluidos e gases.', 'TORRICELLI')," +

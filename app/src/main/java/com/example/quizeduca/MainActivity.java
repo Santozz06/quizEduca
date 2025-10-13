@@ -65,11 +65,38 @@ public class MainActivity extends AppCompatActivity {
             int currentPosition = viewPager.getCurrentItem();
             String temaSelecionado = temaItems.get(currentPosition).getNome();
 
-            Intent intent = new Intent(MainActivity.this, QuizActivity.class);
-            intent.putExtra("TEMA_SELECIONADO", temaSelecionado);
+            androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Selecione o modo de jogo");
 
-            startActivity(intent);
+            String[] modos = {"Fácil", "Médio", "Difícil"};
+
+            builder.setItems(modos, (dialog, which) -> {
+                int maxTentativas;
+
+                switch (which) {
+                    case 0:
+                        maxTentativas = 6;
+                        break;
+                    case 1:
+                        maxTentativas = 3;
+                        break;
+                    case 2:
+                        maxTentativas = 1;
+                        break;
+                    default:
+                        maxTentativas = 6;
+                }
+
+                Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+                intent.putExtra("TEMA_SELECIONADO", temaSelecionado);
+                intent.putExtra("MAX_TENTATIVAS", maxTentativas);
+                startActivity(intent);
+            });
+
+            builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+            builder.show();
         });
+
     }
 
     private void setupIndicators() {

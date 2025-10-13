@@ -34,7 +34,7 @@ public class QuizActivity extends AppCompatActivity {
     private String respostaOriginal;
     private int tentativaAtual = 0;
     private int posicaoAtual = 0;
-    private final int MAX_TENTATIVAS = 6;
+    private int MAX_TENTATIVAS = 6;
 
     private List<Integer> posicoesValidas;
 
@@ -42,6 +42,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        MAX_TENTATIVAS = getIntent().getIntExtra("MAX_TENTATIVAS", 6);
 
         inicializarViews();
 
