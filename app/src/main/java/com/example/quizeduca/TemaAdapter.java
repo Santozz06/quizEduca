@@ -1,9 +1,12 @@
 package com.example.quizeduca;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.util.LruCache;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
@@ -11,6 +14,8 @@ import java.util.List;
 public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder> {
 
     private List<TemaItem> temaItems;
+    // Cache simples por resourceId -> Bitmap já aparado
+    private static final LruCache<Integer, Bitmap> bitmapCache = new LruCache<>(20);
 
     public TemaAdapter(List<TemaItem> temaItems) {
         this.temaItems = temaItems;
@@ -27,7 +32,20 @@ public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder
     @Override
     public void onBindViewHolder(@NonNull TemaViewHolder holder, int position) {
         TemaItem item = temaItems.get(position);
-        holder.imageView.setImageResource(item.getImageResId());
+        int resId = item.getImageResId();
+        Bitmap bmp = bitmapCache.get(resId);
+        if (bmp == null) {
+            Bitmap decoded = BitmapFactory.decodeResource(holder.imageView.getResources(), resId);
+            bmp = BitmapUtils.trimTransparentBorders(decoded);
+            if (bmp != null) {
+                bitmapCache.put(resId, bmp);
+            }
+        }
+        if (bmp != null) {
+            holder.imageView.setImageBitmap(bmp);
+        } else {
+            holder.imageView.setImageResource(resId);
+        }
     }
 
     @Override
