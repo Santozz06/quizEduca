@@ -11,7 +11,7 @@ import java.util.List;
 public class QuizDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "quiz.db";
-    private static final int DATABASE_VERSION = 4; 
+    private static final int DATABASE_VERSION = 5;
 
     public static final String TABLE_PERGUNTAS = "perguntas";
     public static final String COLUMN_ID = "id";
@@ -50,6 +50,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('História', 'Processo histórico de dominação e exploração de territórios por potências estrangeiras. No caso do Brasil, envolveu a ocupação portuguesa, o uso da mão de obra escravizada e a imposição cultural e religiosa sobre os povos indígenas. Suas marcas persistem até hoje.', 'Colonização')," +
                 "('História', 'Conflito diplomático entre Brasil e França ocorrido entre 1961 e 1963, motivado pela pesca de lagostas na costa nordeste brasileira. Apesar de não ter resultado em guerra armada, foi um episódio simbólico da afirmação da soberania marítima do Brasil. Guerra das…', 'Lagostas')," +
                 "('História', 'Conjunto de países que se uniram contra o Eixo durante a Segunda Guerra Mundial. Incluíam, entre outros, Estados Unidos, União Soviética, Reino Unido e França. A vitória deles em 1945 redesenhou o mapa político mundial.', 'Aliados')," +
+                "('História', 'Regime político em que o poder se concentra nas mãos de um único governante. Na Europa, especialmente na França, esse sistema atingiu seu auge durante os séculos XVII e XVIII. O monarca controlava legislação, finanças e decisões militares.', 'Absolutismo')," +
+                "('História', 'Movimento intelectual que valorizava a razão e a ciência. Filósofos questionavam o poder da Igreja e do absolutismo. Seus ideais influenciaram revoluções políticas e a valorização da liberdade individual.', 'Iluminismo')," +
+                "('História', 'Processo de expansão europeia que estabelecia domínio político, econômico e cultural sobre povos de outros continentes. Envolvia exploração de recursos naturais e subjugação das populações locais durante séculos.', 'Colonialismo')," +
+                "('História', 'Tratado histórico assinado em 1494 que dividiu as terras recém-descobertas entre Portugal e Espanha. Definia uma linha imaginária no Atlântico para delimitar as regiões de colonização de cada potência.', 'Tordesilhas')," +
+                "('História', 'Período pré-histórico marcado pelo desenvolvimento da agricultura e domesticação de animais. Humanos deixaram de ser nômades e começaram a construir assentamentos permanentes e sociedades mais complexas.', 'Neolítica')," +
+                "('História', 'Movimento religioso iniciado no século XVI que questionava as práticas da Igreja Católica. Defendia leitura da Bíblia e acesso direto à fé sem intermediários. Gerou profundas divisões políticas e religiosas na Europa.', 'Protestantismo')," +
+                "('História', 'Militar e imperador francês que conquistou grande parte da Europa no início do século XIX. Suas campanhas transformaram fronteiras políticas e espalharam ideias revolucionárias pelo continente.', 'Napoleão')," +
+                "('História', 'Sistema econômico que priorizava acúmulo de metais preciosos e balança comercial favorável. As metrópoles coloniais extraiam recursos das colônias para enriquecer a nação europeia.', 'Mercantilismo')," +
+                "('História', 'Ideologia que valoriza a nação e sua soberania acima de tudo. Gerou conflitos políticos, movimentos independentistas e guerras durante os séculos XIX e XX.', 'Nacionalismo')," +
+                "('História', 'Movimento de banditismo social no sertão brasileiro durante séculos XVII a XX. Grupos armados atacavam gado, alimentos e dinheiro, tornando-se heróis populares para o povo oprimido.', 'Cangaço')," +
 
                 // GEOGRAFIA
                 "('Geografia', 'Ação humana que remove a cobertura vegetal nativa, alterando ecossistemas e ciclos naturais. Está ligada a problemas como a perda da biodiversidade, mudanças climáticas e conflitos sociais.', 'DESMATAMENTO')," +
@@ -67,6 +77,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Geografia', 'Processo de degradação do solo em áreas áridas ou semiáridas, causado por fatores naturais e humanos, como desmatamento e uso inadequado da terra.', 'Desertificação')," +
                 "('Geografia', 'Processo de deslocamento de pessoas de um país para outro, motivado por fatores econômicos, sociais, políticos ou ambientais. Pode ser voluntário ou forçado.', 'Migração')," +
                 "('Geografia', 'Área de vegetação típica do Brasil central, marcada por árvores retorcidas, clima seco e biodiversidade adaptada às estações.', 'Cerrado')," +
+                "('Geografia', 'Estudo das águas continentais e oceânicas do planeta. Inclui rios, lagos, geleiras e aquíferos, fundamentais para entender o clima, a vida e a ocupação humana.', 'Hidrografia')," +
+                "('Geografia', 'Grande centro urbano que concentra população, economia e poder político. Funciona como núcleo que comanda a região, atraindo recursos e exercendo influência sobre cidades menores.', 'Metrópole')," +
+                "('Geografia', 'Processo de integração econômica, política e cultural entre países. Facilitado por tecnologia e transportes, gerou interdependência entre nações e fluxos de informação', 'Globalização')," +
+                "('Geografia', 'Concentração de várias metrópoles próximas que formam uma megacidade. Exemplo clássico: região entre Rio de Janeiro e São Paulo, com milhões de habitantes.', 'Megalópole')," +
+                "('Geografia', 'Processo crescente de concentração de população em cidades. Envolve transformação do espaço, construção de infraestrutura e mudanças nos modos de vida da população.', 'Urbanização')," +
+                "('Geografia', 'Forma de relevo plana ou com pouca declividade. Geralmente favorável à agricultura, aos assentamentos humanos e com facilidade de deslocamento.', 'Planície')," +
+                "('Geografia', 'Extensa área elevada em relação ao nível do mar. Possui topo aplainado, embora possa ter vales profundos e encostas íngremes em suas bordas.', 'Planalto')," +
+                "('Geografia', 'Deslocamento de populações de um lugar para outro, em busca de melhores oportunidades ou fugindo de problemas. Configura mudanças demográficas e culturais.', 'Migração')," +
+                "('Geografia', 'Estudo estatístico das populações humanas. Analisa crescimento, distribuição, idade, mortalidade e natalidade de grupos sociais em determinados territórios.', 'Demografia')," +
+                "('Geografia', 'Forma de relevo caracterizada por elevação natural do terreno com altitude superior a 300 metros. Possui áreas de maior declividade e cume mais ou menos estreito.', 'Montanha')," +
 
                 // BIOLOGIA
                 "('Biologia', 'Conjunto de informações hereditárias presentes no DNA de um indivíduo, que determinam suas características potenciais. Nem sempre o que está nos genes se expressa diretamente na aparência, já que o ambiente também influencia.', 'GENOTIPO')," +
@@ -84,6 +104,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Biologia', 'Tipo de divisão celular que gera duas células-filhas idênticas à célula-mãe, com o mesmo número de cromossomos. É responsável pelo crescimento, regeneração de tecidos e manutenção dos organismos multicelulares. Divide-se em fases: prófase, metáfase, anáfase e telófase.', 'Mitose')," +
                 "('Biologia', 'Processo biológico que ocorre após a fecundação do óvulo pelo espermatozóide, resultando no desenvolvimento de um embrião dentro do útero. Dura aproximadamente 40 semanas e envolve intensas transformações hormonais e fisiológicas no corpo da mulher.', 'Gravidez')," +
                 "('Biologia', 'Conjunto de órgãos responsáveis pelas trocas gasosas entre o corpo e o ambiente. Inclui nariz, traqueia, brônquios e pulmões, que garantem a entrada de oxigênio e a eliminação do gás carbônico. É essencial para o metabolismo e a produção de energia celular. Sistema…', 'Respiratório')," +
+                "('Biologia', 'Capacidade do organismo de manter condições internas estáveis apesar de variações externas. Envolve regulação de temperatura, pH e concentração de substâncias.', 'Homeostase')," +
+                "('Biologia', 'Alteração no material genético que pode ser herdada. Gera variação nas espécies e é matéria-prima para a seleção natural evoluir.', 'Mutação')," +
+                "('Biologia', 'Substância química produzida por glândulas que regula funções do organismo. Circula pela corrente sanguínea influenciando metabolismo, crescimento e comportamento.', 'Hormônio')," +
+                "('Biologia', 'Vírus que possui RNA como material genético. Inverte seu material genético para se replicar dentro da célula hospedeira, como no caso do HIV.', 'Retrovírus')," +
+                "('Biologia', 'Variedade de espécies, ecossistemas e genes em um determinado ambiente. Quanto maior, mais resiliente é o ecossistema frente a mudanças.', 'Biodiversidade')," +
+                "('Biologia', 'Estrutura que contém material genético em forma de DNA. Presente no núcleo celular e carrega os genes responsáveis pelas características hereditárias.', 'Cromossomo')," +
+                "('Biologia', 'Movimento de água através de membrana semipermeável. Segue da região com menor concentração de soluto para a com maior concentração.', 'Osmose')," +
+                "('Biologia', 'Organela celular responsável pela fotossíntese. Contém clorofila e transforma energia solar em energia química para a célula vegetal.', 'Cloroplasto')," +
+                "('Biologia', 'Proteína que acelera reações químicas no organismo. Atua como catalisador, permitindo que processos biológicos ocorram em velocidade adequada.', 'Enzima')," +
+                "('Biologia', 'Estrutura celular responsável pela síntese de proteínas. Lê a informação do RNA e traduz em cadeias de aminoácidos.', 'Ribossomo')," +
 
                 // MATEMÁTICA
                 "('Matemática', 'Medida de tendência central que representa o valor que ocupa a posição do meio em um conjunto de dados ordenados. É muito útil quando se quer evitar distorções causadas por valores muito altos ou muito baixos.', 'MEDIANA')," +
@@ -101,6 +131,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Matemática', 'Conjunto de todos os pontos de um plano que estão à mesma distância de um ponto fixo chamado centro. É amplamente usada em problemas que envolvem movimento circular, medições de ângulo e relações com o número π (pi).', 'Circunferência')," +
                 "('Matemática', 'Fórmula matemática usada para resolver equações do segundo grau. Permite encontrar as raízes de uma parábola. É uma das ferramentas mais conhecidas e aplicadas do ensino de álgebra.', 'Bhaskara')," +
                 "('Matemática', 'Resultado da multiplicação entre dois ou mais números ou expressões. O conceito vai além da aritmética, aparecendo também em áreas como álgebra, matrizes e funções. É essencial para compreender relações de proporcionalidade e crescimento.', 'Produto')," +
+                "('Matemática', 'Medida matemática da chance de um evento ocorrer. Expressa como número entre 0 e 1, onde 0 significa impossível e 1 significa certeza.', 'Probabilidade')," +
+                "('Matemática', 'Área da matemática que usa símbolos para representar números e operações. Permite resolver equações e trabalhar com relações entre variáveis.', 'Álgebra')," +
+                "('Matemática', 'Coleção de elementos bem definidos e distintos. Fundamento da matemática moderna para organizar e estudar relações entre objetos.', 'Conjunto')," +
+                "('Matemática', 'Expressão algébrica com múltiplos termos compostos de variáveis e constantes. Cada termo possui um grau determinado pela potência da variável.', 'Polinômio')," +
+                "('Matemática', 'Conceito de cálculo que mede a taxa de variação de uma função. Indica a inclinação da reta tangente à curva em um ponto específico.', 'Derivada')," +
+                "('Matemática', 'Reta que toca uma curva em apenas um ponto. Em trigonometria, razão entre seno e cosseno de um ângulo.', 'Tangente')," +
+                "('Matemática', 'Medida de superfície de uma forma geométrica bidimensional. Expressa em unidades quadradas e varia conforme o tipo de figura.', 'Área')," +
+                "('Matemática', 'Relação matemática de igualdade entre razões. Indica que duas frações têm o mesmo valor quando multiplicadas em cruz.', 'Proporção')," +
+                "('Matemática', 'Símbolo gráfico usado para representar números. O sistema decimal utiliza 10 números: de 0 a 9.', 'Algarismo')," +
+                "('Matemática', 'Medida do espaço tridimensional ocupado por um objeto. Expressa em unidades cúbicas e varia conforme a forma geométrica.', 'Volume')," +
 
                 // PORTUGUÊS
                 "('Português', 'Movimento literário do século XIX, marcado pela valorização das emoções, da natureza e da identidade nacional. No Brasil, teve fases indianista, ultrarromântica e condoreira, influenciando fortemente a construção da ideia de \"nação\".', 'ROMANTISMO')," +
@@ -118,6 +158,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Português', 'Palavra que indica circunstâncias de tempo, lugar, modo ou intensidade, modificando verbos, adjetivos ou outros advérbios.', 'Advérbio')," +
                 "('Português', 'Escritora brasileira que explorou a subjetividade, os sentimentos e os silêncios da alma humana. Com estilo intimista e reflexivo, é autora de obras como \"A Hora da Estrela\". Clarice…', 'Lispector')," +
                 "('Português', 'Movimento literário que surgiu no Brasil na década de 1920, rompendo com padrões estéticos tradicionais e valorizando a liberdade de expressão, a linguagem coloquial e a identidade nacional.', 'Modernismo')," +
+                "('Português', 'Linguagem específica de um grupo profissional ou social. Facilita comunicação entre membros do grupo, mas pode excluir quem não conhece os termos.', 'Jargão')," +
+                "('Português', 'Tipo de texto que apresenta argumentos sobre um tema. Busca convencer o leitor através da exposição lógica de ideias e exemplos.', 'Dissertativo')," +
+                "('Português', 'Regra gramatical que harmoniza palavras em gênero e número. Garante coerência entre artigos, adjetivos e substantivos na oração.', 'Concordância')," +
+                "('Português', 'Sequência de eventos e ações que compõem a história de uma narrativa. É o fio condutor que mantém a trama unida do início ao fim.', 'Enredo')," +
+                "('Português', 'Tipo de texto que conta uma história com personagens, tempo e espaço. Apresenta conflitos e suas resoluções em ordem sequencial.', 'Narrativa')," +
+                "('Português', 'Recurso linguístico que expressa o oposto do que se diz literalmente. Geralmente gera efeito de humor, crítica ou sarcasmo.', 'Ironia')," +
+                "('Português', 'Divisão de um texto que agrupa ideias relacionadas. Iniciado com recuo ou espaço em branco e encerra uma unidade de pensamento.', 'Parágrafo')," +
+                "('Português', 'Raciocínio ou evidência usada para sustentar uma tese ou posição. Base lógica sobre a qual uma afirmação se estabelece.', 'Argumento')," +
+                "('Português', 'Repetição desnecessária de ideias já expressas. Torna o texto verboso e prejudica a clareza da comunicação.', 'Redundância')," +
+                "('Português', 'Unidade mínima de som de uma língua. Diferente de letra, pois um fonema pode ser representado por diferentes letras.', 'Fonema')," +
 
                 // INGLÊS
                 "('Inglês', 'Science that studies human behavior and mental processes. It analyzes emotions, thoughts, and actions to understand how individuals and groups interact with and respond to their environment.', 'PSYCHOLOGY')," +
@@ -135,6 +185,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Inglês', 'Political and economic system in which the means of production are privately owned, and profit drives decision-making. It often leads to social inequality.', 'Capitalism')," +
                 "('Inglês', 'Form of government in which power is held by the people, often through elected representatives. It values participation, freedom, and equality.', 'Democracy')," +
                 "('Inglês', 'Natural satellite that orbits the Earth, influences tides, and has been a source of fascination and exploration throughout human history.', 'Moon')," +
+                "('Inglês', 'Part of speech that modifies verbs, adjectives, or other adverbs. Usually indicates manner, time, place, or degree of an action or quality.', 'Adverb')," +
+                "('Inglês', 'Word that describes or modifies a noun or pronoun. Adds information about qualities, colors, quantities, or states of being.', 'Adjective')," +
+                "('Inglês', 'Grammatical unit that expresses a complete thought. Contains a subject and predicate, conveying meaning independently.', 'Sentence')," +
+                "('Inglês', 'Spoken exchange of ideas between two or more people. Requires active listening and appropriate turn-taking between participants.', 'Conversation')," +
+                "('Inglês', 'Collection of words known and understood by a person or group. Essential for reading comprehension and effective communication.', 'Vocabulary')," +
+                "('Inglês', 'System of rules that governs the structure of language. Ensures correct arrangement of words to convey meaning clearly.', 'Grammar')," +
+                "('Inglês', 'Skill of composing and organizing ideas into written form. Requires planning, drafting, and revision for effective communication.', 'Writing')," +
+                "('Inglês', 'Unit of written text dealing with a single topic or idea. Contains a main point supported by relevant details and examples.', 'Paragraph')," +
+                "('Inglês', 'Exchange of information, ideas, or feelings between individuals. Can be verbal, non-verbal, or written in various contexts.', 'Communication')," +
+                "('Inglês', 'Converting text from one language to another while preserving meaning. Requires understanding cultural nuances and linguistic differences.', 'Translation')," +
 
                 // FÍSICA
                 "('Física', 'Parte da física que estuda cargas elétricas em movimento e os efeitos que produzem, como correntes, campos magnéticos e circuitos. Fundamental para entender o funcionamento de motores, geradores e eletrônicos.', 'ELETRODINAMICA')," +
@@ -152,6 +212,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Física', 'Escala de temperatura usada principalmente em países como os Estados Unidos. Nela, a água congela a 32° e ferve a 212°, sendo diferente das escalas Celsius e Kelvin.', 'Fahrenheit')," +
                 "('Física', 'Escala de temperatura usada no Brasil e em muitos países. Nela, a água congela a 0 °C e ferve a 100 °C, sob condições normais de pressão. É comum em termômetros, previsões do tempo e estudos escolares.', 'Celsius')," +
                 "('Física', 'Fenômeno em que a luz muda de direção ao passar de um meio para outro, como do ar para a água.', 'Refração')," +
+                "('Física', 'Taxa de mudança da velocidade de um objeto. Pode ser positiva ou negativa (frenagem).', 'Aceleração')," +
+                "('Física', 'Fenômeno onde ondas contornam obstáculos ou passam por aberturas. Evidencia a natureza ondulatória de fenômenos como luz e som.', 'Difração')," +
+                "('Física', 'Taxa de transferência ou consumo de energia por unidade de tempo. Medida em watts e indica a intensidade do trabalho realizado.', 'Potência')," +
+                "('Física', 'Força de atração entre massas. Mantém objetos presos à Terra e governa movimentos de corpos celestes.', 'Gravidade')," +
+                "('Física', 'Transferência de energia quando uma força atua sobre um objeto em movimento. Calculado como produto da força pela distância percorrida.', 'Trabalho')," +
+                "('Física', 'Força que se opõe ao movimento relativo entre superfícies em contato. Dissipa energia em forma de calor e som.', 'Atrito')," +
+                "('Física', 'Onda mecânica que se propaga através de um meio. Gerada por vibrações e viaja mais lentamente que a luz.', 'Som')," +
+                "('Física', 'Dimensão na qual eventos ocorrem em sequência. Medido em segundos, minutos, horas e outros intervalos padronizados.', 'Tempo')," +
+                "('Física', 'Trajetória curved seguida por um objeto em torno de outro. Resultado do equilíbrio entre velocidade tangencial e atração gravitacional.', 'Órbita')," +
+                "('Física', 'Dimensão tridimensional onde todos os objetos existem. Infinito e intangível, sendo o palco para todos os fenômenos físicos.', 'Espaço')," +
 
                 // QUÍMICA
                 "('Química', 'Elemento químico essencial para a vida, presente em moléculas orgânicas como carboidratos, lipídios, proteínas e ácidos nucleicos. Possui grande capacidade de formar cadeias e anéis, permitindo diversidade molecular.', 'CARBONO')," +
@@ -169,6 +239,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Química', 'Tipo de ligação química que ocorre quando um átomo doa elétrons e outro os recebe, formando íons com cargas opostas. Essa atração eletrostática entre os íons resulta em compostos geralmente sólidos e com alto ponto de fusão, como o sal de cozinha.', 'Iônica')," +
                 "('Química', 'Elemento não metálico presente em todos os seres vivos, base da química orgânica.', 'Carbono')," +
                 "('Química', 'Metal que permanece líquido à temperatura ambiente. Foi muito usado em termômetros, mas é tóxico e seu uso diminuiu com o tempo.', 'Mercúrio')," +
+                "('Química', 'Substância que doa prótons (H+) em solução aquosa. Possui pH menor que 7 e reage com bases formando sal e água.', 'Ácido')," +
+                "('Química', 'Mistura homogênea de soluto e solvente. Mantém as propriedades uniformes em toda sua extensão.', 'Solução')," +
+                "('Química', 'Processo de perda de elétrons por um elemento. Geralmente resulta em aumento do estado de oxidação e liberação de energia.', 'Oxidação')," +
+                "('Química', 'Processo químico onde substâncias se transformam em outras. Envolve ruptura e formação de ligações entre átomos.', 'Reação')," +
+                "('Química', 'Substância que aceita prótons (H+) em solução aquosa. Possui pH maior que 7 e neutraliza ácidos.', 'Base')," +
+                "('Química', 'Transição de estado físico de sólido para líquido. Requer absorção de calor até atingir o ponto de fusão.', 'Fusão')," +
+                "('Química', 'Substância que dissolve outra (soluto) formando uma solução. Geralmente presente em maior quantidade.', 'Solvente')," +
+                "('Química', 'Substância dissolvida em um solvente. Presente em menor quantidade e determina as propriedades da solução.', 'Soluto')," +
+                "('Química', 'Estado físico da matéria com forma e volume definidos. Moléculas vibram em posições fixas, estruturando-se em padrões.', 'Sólido')," +
+                "('Química', 'Elemento químico que conduz eletricidade e calor. Geralmente brilhante, maleável e dúctil em temperatura ambiente.', 'Metal')," +
 
                 // ARTE
                 "('Arte', 'Movimento artístico e cultural do século XVII, marcado pelo exagero, o drama e a teatralidade. Nas artes plásticas e na arquitetura, valoriza o contraste de luz e sombra, ornamentação rica e emoções intensas, frequentemente ligado à religião.', 'BARROCO')," +
@@ -186,6 +266,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Arte', 'Movimento artístico surgido na Alemanha no início do século XX, que valoriza a expressão emocional intensa. Utiliza cores fortes, traços marcantes e temas dramáticos para transmitir sentimentos profundos.', 'Expressionismo')," +
                 "('Arte', 'Corrente artística que valoriza a simplicidade, o uso de formas básicas e a ausência de ornamentação. Presente em esculturas, instalações e arquitetura.', 'Minimalismo')," +
                 "('Arte', 'Artista mexicana conhecida por suas pinturas intensas e autobiográficas, que misturam dor física, identidade cultural e elementos do surrealismo. Suas obras exploram temas como feminilidade, sofrimento e raízes indígenas, tornando-se símbolo de resistência e expressão pessoal (apenas primeiro nome).', 'Frida')," +
+                "('Arte', 'Material negro feito de carbono grafítico usado em desenho. Permite trabalhar com intensidades variáveis de tom e pressão.', 'Grafite')," +
+                "('Arte', 'Movimento artístico do tempo atual que questiona conceitos tradicionais. Utiliza diversos materiais e técnicas sem restrições.', 'Contemporâneo')," +
+                "('Arte', 'Movimento artístico que retoma ideais greco-romanos. Valoriza a harmonia, simetria, proporção e representação realista.', 'Classicismo')," +
+                "('Arte', 'Arte que organiza sons e silêncios em sequências estruturadas. Combina ritmo, melodia e harmonia para expressar emoções.', 'Música')," +
+                "('Arte', 'Movimento artístico e cultural brasileiro dos anos 1960. Mesclava tradição popular com modernidade crítica e experimental.', 'Tropicália')," +
+                "('Arte', 'Movimento artístico que fragmentava formas em múltiplas perspectivas. Picasso e Braque revolucionaram a representação do espaço visual.', 'Cubismo')," +
+                "('Arte', 'Movimento de vanguarda que rejeitava lógica e razão. Utilizava absurdo e ironia como crítica ao sistema de valores burguês.', 'Dadaísmo')," +
+                "('Arte', 'Arte de projetar e construir espaços e estruturas. Combina funcionalidade, estética e materiais em harmonia com o ambiente.', 'Arquitetura')," +
+                "('Arte', 'Técnica de representação que cria ilusão de profundidade no desenho. Utiliza pontos de fuga para simular espaço tridimensional.', 'Perspectiva')," +
+                "('Arte', 'Estilo artístico que não busca representação realista de objetos. Enfatiza formas, cores, linhas e texturas para expressar emoções e ideias.', 'Abstrato')," +
 
                 // EDUCAÇÃO FÍSICA
                 "('Educação Física', 'Manifestação cultural e artística brasileira que combina luta, dança, música e acrobacias. Surgiu como forma de resistência de povos africanos escravizados, desenvolvendo habilidades físicas como força, flexibilidade e coordenação, além de promover socialização e expressão cultural.', 'CAPOEIRA')," +
@@ -203,6 +293,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Educação Física', 'Modalidade esportiva composta por provas de corrida, salto e arremesso, considerada uma das mais antigas do mundo. Trabalha resistência, força e técnica, sendo uma das bases das Olimpíadas modernas. Representa o esforço humano pela superação de limites.', 'Atletismo')," +
                 "('Educação Física', 'Conjunto de práticas corporais que visam desenvolver força, equilíbrio, flexibilidade e coordenação. Pode ser artística, rítmica, laboral ou de condicionamento físico. Além do aspecto esportivo, é também uma forma de expressão e cuidado com o corpo.', 'Ginastica')," +
                 "('Educação Física', 'Prática de exercícios físicos com sobrecarga (como pesos e máquinas) para o fortalecimento e desenvolvimento dos músculos. Melhora a postura, a resistência e o condicionamento físico. É utilizada tanto para fins estéticos quanto terapêuticos e de saúde.', 'Musculação')," +
+                "('Educação Física', 'Estratégia planejada para vencer no esporte. Envolve posicionamento, movimentos sincronizados e leitura do jogo adversário.', 'Tática')," +
+                "('Educação Física', 'Atividade onde participantes disputam por vitória ou prêmios. Estimula superação, respeito às regras e fair play.', 'Competição')," +
+                "('Educação Física', 'Alongamento de fibras musculares e ligamentos. Essencial para aumentar flexibilidade e prevenir lesões no treinamento.', 'Distensão')," +
+                "('Educação Física', 'Esporte radical praticado sobre tábua com rodas. Exige equilíbrio, coordenação e manejo técnico de diferentes obstáculos.', 'Skate')," +
+                "('Educação Física', 'Prova de corrida onde atletas saltam sobre barreiras. Combina velocidade com coordenação motora para transpor obstáculos.', 'Hurdles')," +
+                "('Educação Física', 'Princípio de trabalhar em grupo para objetivo comum. Valoriza colaboração, solidariedade e distribuição equitativa de benefícios.', 'Cooperativismo')," +
+                "('Educação Física', 'Capacidade articular de alongar músculos e ligamentos. Permite maior amplitude de movimento e reduz risco de lesões.', 'Flexibilidade')," +
+                "('Educação Física', 'Habilidade de mudar de direção rapidamente com controle. Essencial em esportes que exigem movimentos rápidos e precisos.', 'Agilidade')," +
+                "('Educação Física', 'Capacidade do organismo de manter esforço prolongado. Envolve resistência cardiovascular, muscular e mental.', 'Resistência')," +
+                "('Educação Física', 'Habilidade de manter o corpo em posição estável. Depende de visão, propriocepção e sistema vestibular.', 'Equilíbrio')," +
 
                 // FILOSOFIA
                 "('Filosofia', 'Filósofo francês conhecido como \"pai da filosofia moderna\", defensor do pensamento racional e da dúvida metódica. Sua famosa frase \"Penso, logo existo\" representa a busca por fundamentos seguros para o conhecimento.', 'DESCARTES')," +
@@ -220,6 +320,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Filosofia', 'Qualidades morais que orientam o ser humano a agir corretamente, equilibrando razão e emoção. Aristóteles via elas como o \"meio-termo\" entre dois extremos, enquanto outras correntes filosóficas a associam à justiça, coragem e sabedoria.', 'Virtudes')," +
                 "('Filosofia', 'Filósofo francês que analisou as relações entre poder, saber e controle social. Investigou como instituições como prisões, escolas e hospitais moldam comportamentos e subjetividades. Sua obra convida a questionar as estruturas invisíveis que regem a sociedade.', 'Foucault')," +
                 "('Filosofia', 'Conjunto de pensamentos e tradições filosóficas originadas no continente africano, baseadas na coletividade, ancestralidade e ética comunitária. Valoriza o Ubuntu (\"sou porque nós somos\") e questiona o eurocentrismo como única forma de produzir conhecimento. Filosofia…', 'Africana')," +
+                "('Filosofia', 'Filósofo iluminista que defendia soberania popular e contrato social. Influenciou revoluções democráticas com ideias sobre liberdade natural.', 'Rousseau')," +
+                "('Filosofia', 'Pensador francês que analisou poder, conhecimento e disciplina. Estudou como as instituições controlam corpos e mentalidades.', 'Foucault')," +
+                "('Filosofia', 'Filosofia que busca maximizar felicidade e minimizar sofrimento. Baseado na ideia de que ações são moralmente corretas se beneficiam a maioria.', 'Utilitarismo')," +
+                "('Filosofia', 'Filósofo que questionou a moral tradicional e valores estabelecidos. Propôs superação de si mesmo e criação de novos valores.', 'Nietzsche')," +
+                "('Filosofia', 'Filósofo grego que defendia o relativismo do conhecimento. Famoso pela máxima \"O homem é a medida de todas as coisas\".', 'Protágoras')," +
+                "('Filosofia', 'Pensador renascentista que analisou o poder político pragmaticamente. Separava a moralidade da prática política ao buscar a manutenção do poder.', 'Maquiavel')," +
+                "('Filosofia', 'Filosofia que busca virtude através de controle das emoções. Prega aceitação do destino e tranquilidade mental como ideais.', 'Estoicismo')," +
+                "('Filosofia', 'Filosofia que valoriza prazer e ausência de dor. Contrário à crença popular, defende prazeres simples e moderados.', 'Epicurismo')," +
+                "('Filosofia', 'Filosofia que enfatiza liberdade e responsabilidade individual. Sustenta que existência precede essência e cada um cria seu próprio significado.', 'Existencialismo')," +
+                "('Filosofia', 'Método de raciocínio que avança por tese, antítese e síntese. Fundamental para compreender o desenvolvimento histórico e as contradições.', 'Dialética')," +
 
                 // SOCIOLOGIA
                 "('Sociologia', 'Teoria social e econômica baseada nas ideias de Karl Marx, que analisa a luta de classes e a desigualdade na sociedade. Propõe que a história seja marcada por conflitos entre quem detém os meios de produção e quem realiza o trabalho.', 'MARXISMO')," +
@@ -236,14 +346,27 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "('Sociologia', 'Sistema social e cultural que privilegia o poder masculino e coloca as mulheres em posição de subordinação. Está presente nas instituições, nas leis e nas relações familiares. A Sociologia e o feminismo analisam como esse modelo perpetua desigualdades de gênero e limita direitos.', 'Patriarcado')," +
                 "('Sociologia', 'Conceito formulado por Antonio Gramsci para explicar o domínio de uma classe social não apenas pela força, mas pela influência cultural e ideológica. Ela molda o pensamento coletivo, fazendo com que as ideias do grupo dominante pareçam naturais ou universais.', 'Hegemonia')," +
                 "('Sociologia', 'Classe social que surgiu com o capitalismo e detém os meios de produção, como fábricas e empresas. Representa o grupo economicamente dominante, cujos interesses frequentemente entram em conflito com os do proletariado. É central na análise marxista da luta de classes.', 'Burguesia')," +
-                "('Sociologia', 'Diferença de acesso a recursos, oportunidades e direitos entre grupos sociais. Pode se manifestar por fatores como renda, gênero, raça ou origem. A Sociologia busca compreender suas causas estruturais e propor caminhos para uma sociedade mais justa e inclusiva.', 'Desigualdade')");
+                "('Sociologia', 'Diferença de acesso a recursos, oportunidades e direitos entre grupos sociais. Pode se manifestar por fatores como renda, gênero, raça ou origem. A Sociologia busca compreender suas causas estruturais e propor caminhos para uma sociedade mais justa e inclusiva.', 'Desigualdade')" +
+                "('Sociologia', 'Situação de ausência de normas sociais que regulam comportamento. Resulta em desorganização social, conflito e desvio das condutas esperadas.', 'Anomia')," +
+                "('Sociologia', 'Corrente sociológica que vê sociedade como sistema equilibrado. Cada instituição tem função para manter coesão social.', 'Funcionalismo')," +
+                "('Sociologia', 'Movimento que busca igualdade de direitos e oportunidades entre gêneros. Questiona estruturas patriarcais em esferas pública e privada.', 'Feminismo')," +
+                "('Sociologia', 'Processo de padronização de características em uma população. Geralmente resultado de globalização e pressão cultural dominante.', 'Homogeneização')," +
+                "('Sociologia', 'Relativo aos aspectos que definem a identidade de indivíduos ou grupos. Envolve etnia, classe, gênero, religião e nacionalidade.', 'Identitário')," +
+                "('Sociologia', 'Sistema de ideias e valores que justifica ordem social. Molda percepção da realidade e interesses de grupos sociais.', 'Ideologia')," +
+                "('Sociologia', 'Força que mantém grupo unido em torno de valores comuns. Essencial para estabilidade e funcionamento harmonioso da sociedade.', 'Coesão')," +
+                "('Sociologia', 'Processo pelo qual indivíduos aprendem normas e valores culturais. Ocorre através de família, escola, mídia e outras instituições.', 'Socialização')," +
+                "('Sociologia', 'Mecanismo pelo qual a sociedade regula comportamentos de seus membros. Pode ser exercido através de normas, leis, sanções e vigilância.', 'Controle')," +
+                "('Sociologia', 'Movimento de indivíduos entre posições diferentes na hierarquia social. Pode ser vertical (mudança de classe) ou horizontal (mudança de ocupação).', 'Mobilidade')"
+        );
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PERGUNTAS);
         onCreate(db);
     }
+
     // buscar perguntas por tema
     public List<Pergunta> getPerguntasByTema(String tema, boolean caseInsensitive) {
         List<Pergunta> lista = new ArrayList<>();
@@ -371,3 +494,4 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         return count;
     }
 }
+
