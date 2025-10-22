@@ -1,4 +1,4 @@
-package com.example.quizeduca;
+package com.quizeduca.app;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

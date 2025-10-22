@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.quizeduca"
+    namespace = "com.quizeduca.app"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.quizeduca"
+        applicationId = "com.quizeduca.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

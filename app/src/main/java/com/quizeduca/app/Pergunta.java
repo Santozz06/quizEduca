@@ -1,4 +1,4 @@
-package com.example.quizeduca;
+package com.quizeduca.app;
 
 public class Pergunta {
     private int id;

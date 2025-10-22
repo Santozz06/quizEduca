@@ -1,4 +1,4 @@
-package com.example.quizeduca;
+package com.quizeduca.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
