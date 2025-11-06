@@ -14,7 +14,6 @@ import java.util.List;
 public class TemaAdapter extends RecyclerView.Adapter<TemaAdapter.TemaViewHolder> {
 
     private List<TemaItem> temaItems;
-    // Cache simples por resourceId -> Bitmap já aparado
     private static final LruCache<Integer, Bitmap> bitmapCache = new LruCache<>(20);
 
     public TemaAdapter(List<TemaItem> temaItems) {

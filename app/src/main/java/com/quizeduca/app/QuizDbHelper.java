@@ -33,11 +33,9 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 COLUMN_RESPOSTA + " TEXT)";
         db.execSQL(CREATE_TABLE);
 
-        // Popular dados em blocos menores para evitar erro de string longa
         populateData(db);
     }
 
-    // Insere uma pergunta usando ContentValues (evita SQL gigante)
     private void add(SQLiteDatabase db, String tema, String texto, String resposta) {
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_TEMA, tema);
@@ -46,7 +44,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.insert(TABLE_PERGUNTAS, null, cv);
     }
 
-    // Popular todas as perguntas
+    // todas as perguntas
     private void populateData(SQLiteDatabase db) {
         // HISTÓRIA
         add(db, "História", "Sistema medieval em que um senhor oferecia proteção e terras a um vassalo, que em troca prestava serviços e jurava fidelidade. Baseava-se em relações pessoais e obrigações mútuas, estruturando poder e hierarquia na sociedade feudal.", "VASSALAGEM");
@@ -74,6 +72,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "História", "Sistema econômico que priorizava acúmulo de metais preciosos e balança comercial favorável. As metrópoles coloniais extraiam recursos das colônias para enriquecer a nação europeia.", "Mercantilismo");
         add(db, "História", "Ideologia que valoriza a nação e sua soberania acima de tudo. Gerou conflitos políticos, movimentos independentistas e guerras durante os séculos XIX e XX.", "Nacionalismo");
         add(db, "História", "Movimento de banditismo social no sertão brasileiro durante séculos XVII a XX. Grupos armados atacavam gado, alimentos e dinheiro, tornando-se heróis populares para o povo oprimido.", "Cangaço");
+        add(db, "História", "Modelo socioeconômico predominante na Europa medieval, baseado em laços pessoais, terras em troca de serviços e fragmentação do poder. Estrutura a sociedade em ordens e fortalece vínculos de dependência entre camadas sociais.", "Feudalismo");
+        add(db, "História", "Movimento cultural e científico dos séculos XV e XVI que resgatou referências clássicas, impulsionou artes e ciências e valorizou o ser humano. Marcou a transição para a modernidade na Europa.", "Renascimento");
+        add(db, "História", "Instituição religiosa encarregada de investigar, julgar e punir práticas consideradas heréticas. Manteve tribunais, utilizou censura e contribuiu para o controle da ortodoxia na cristandade.", "Inquisição");
+        add(db, "História", "Sistema de exploração de trabalho forçado que marcou profundamente a formação econômica e social das Américas. Implicou desumanização, violência e resistência por parte dos grupos subjugados.", "Escravidão");
+        add(db, "História", "Prática política das oligarquias regionais durante a Primeira República no Brasil. Caracterizava-se por patronagem, controle eleitoral e influência local dos grandes proprietários.", "Coronelismo");
+        add(db, "História", "Comunidades formadas por pessoas fugidas de cativeiro e seus descendentes, organizadas em territórios de resistência. Desenvolveram formas próprias de defesa, produção e cultura.", "Quilombo");
+        add(db, "História", "Série de levantes militares e civis na década de 1920 que criticavam a política oligárquica e defendiam reformas. Influenciou a vida política brasileira e antecipou mudanças no Estado.", "Tenentismo");
+        add(db, "História", "Forma de governo em que autoridades são escolhidas para exercer mandatos em nome do povo. Pressupõe legalidade, alternância de poder e representação política.", "República");
+        add(db, "História", "Conjunto de expedições internas que avançaram pelo interior do território em busca de metais e captura de povos indígenas. Expandiu fronteiras de ocupação e deixou marcas na história paulista e brasileira.", "Bandeirantismo");
 
         // GEOGRAFIA
         add(db, "Geografia", "Ação humana que remove a cobertura vegetal nativa, alterando ecossistemas e ciclos naturais. Está ligada a problemas como a perda da biodiversidade, mudanças climáticas e conflitos sociais.", "DESMATAMENTO");
@@ -101,6 +108,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Geografia", "Deslocamento de populações de um lugar para outro, em busca de melhores oportunidades ou fugindo de problemas. Configura mudanças demográficas e culturais.", "Migração");
         add(db, "Geografia", "Estudo estatístico das populações humanas. Analisa crescimento, distribuição, idade, mortalidade e natalidade de grupos sociais em determinados territórios.", "Demografia");
         add(db, "Geografia", "Forma de relevo caracterizada por elevação natural do terreno com altitude superior a 300 metros. Possui áreas de maior declividade e cume mais ou menos estreito.", "Montanha");
+        add(db, "Geografia", "Coordenada geográfica que indica a distância de um ponto em relação ao Equador. Determina zonas climáticas e influencia insolação e estações do ano.", "Latitude");
+        add(db, "Geografia", "Coordenada geográfica que mede a distância em relação ao Meridiano de Greenwich. Fundamenta fusos horários e localização precisa no globo.", "Longitude");
+        add(db, "Geografia", "Grande unidade ambiental definida por clima, solo, hidrografia e formas de vida típicas. Abriga cadeias alimentares e processos ecológicos interdependentes.", "Bioma");
+        add(db, "Geografia", "Ambiente de transição entre rios e mares onde a água doce se mistura à salgada. Altamente produtivo, concentra atividades pesqueiras e vulnerabilidades ambientais.", "Estuário");
+        add(db, "Geografia", "Processo de desgaste e transporte de materiais da superfície terrestre por água, vento ou gelo. Modela o relevo e pode ser acelerado por práticas antrópicas.", "Erosão");
+        add(db, "Geografia", "Conjunto contínuo de montanhas alinhadas que se estende por grandes distâncias. Resulta de movimentos tectônicos e influencia clima e drenagem.", "Cordilheira");
+        add(db, "Geografia", "Proporção de energia solar refletida por uma superfície. Afeta o balanço térmico da Terra e varia conforme cobertura do solo e gelo.", "Albedo");
+        add(db, "Geografia", "Reserva subterrânea de água acumulada em rochas porosas ou fraturadas. Fonte estratégica para abastecimento humano, irrigação e resiliência hídrica.", "Aquífero");
+        add(db, "Geografia", "Camada de solo permanentemente congelada em altas latitudes ou altitudes. Sensível ao aquecimento global, libera gases e altera paisagens ao descongelar.", "Permafrost");
 
         // BIOLOGIA
         add(db, "Biologia", "Conjunto de informações hereditárias presentes no DNA de um indivíduo, que determinam suas características potenciais. Nem sempre o que está nos genes se expressa diretamente na aparência, já que o ambiente também influencia.", "GENOTIPO");
@@ -128,6 +144,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Biologia", "Organela celular responsável pela fotossíntese. Contém clorofila e transforma energia solar em energia química para a célula vegetal.", "Cloroplasto");
         add(db, "Biologia", "Proteína que acelera reações químicas no organismo. Atua como catalisador, permitindo que processos biológicos ocorram em velocidade adequada.", "Enzima");
         add(db, "Biologia", "Estrutura celular responsável pela síntese de proteínas. Lê a informação do RNA e traduz em cadeias de aminoácidos.", "Ribossomo");
+        add(db, "Biologia", "Proteína do sistema imune capaz de reconhecer antígenos específicos. Participa da defesa do organismo e da memória imunológica.", "Anticorpo");
+        add(db, "Biologia", "Molécula presente nas hemácias, responsável pelo transporte de oxigênio e parte do dióxido de carbono. Sua afinidade por gases varia com pH e temperatura.", "Hemoglobina");
+        add(db, "Biologia", "Célula especializada na condução de impulsos elétricos, integrando redes de comunicação no organismo. Possui corpo celular, dendritos e axônio.", "Neurônio");
+        add(db, "Biologia", "Matriz fluida interna à célula onde ocorrem inúmeras reações metabólicas. Abriga organelas e moléculas essenciais à vida celular.", "Citoplasma");
+        add(db, "Biologia", "Unidade estrutural das proteínas, formada por um grupo amina, um grupo carboxila e uma cadeia lateral. Liga-se em sequências específicas determinando funções biológicas.", "Aminoácido");
+        add(db, "Biologia", "Via metabólica que degrada glicose para produzir ATP, piruvato e intermediários. Ocorre no citosol e é central na bioenergética.", "Glicólise");
+        add(db, "Biologia", "Organismo capaz de produzir seu próprio alimento a partir de fontes inorgânicas e energia luminosa ou química.", "Autótrofo");
+        add(db, "Biologia", "Organismo que obtém energia e carbono consumindo matéria orgânica.", "Heterótrofo");
+        add(db, "Biologia", "Mecanismo programado de morte celular que mantém a homeostase tecidual.", "Apoptose");
 
         // MATEMÁTICA
         add(db, "Matemática", "Medida de tendência central que representa o valor que ocupa a posição do meio em um conjunto de dados ordenados. É muito útil quando se quer evitar distorções causadas por valores muito altos ou muito baixos.", "MEDIANA");
@@ -155,6 +180,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Matemática", "Relação matemática de igualdade entre razões. Indica que duas frações têm o mesmo valor quando multiplicadas em cruz.", "Proporção");
         add(db, "Matemática", "Símbolo gráfico usado para representar números. O sistema decimal utiliza 10 números: de 0 a 9.", "Algarismo");
         add(db, "Matemática", "Medida do espaço tridimensional ocupado por um objeto. Expressa em unidades cúbicas e varia conforme a forma geométrica.", "Volume");
+        add(db, "Matemática", "Operador do cálculo que acumula taxas de variação ao longo de um intervalo. Permite medir áreas sob curvas e resolver problemas físicos.", "Integral");
+        add(db, "Matemática", "Operação definida para números naturais que multiplica uma sequência decrescente. Fundamental em contagens, probabilidades e séries.", "Fatorial");
+        add(db, "Matemática", "Enunciado demonstrável que decorre de definições, axiomas e proposições anteriores.", "Teorema");
+        add(db, "Matemática", "Relação que associa cada elemento de um conjunto de entrada a exatamente um elemento de saída.", "Função");
+        add(db, "Matemática", "Vetor de derivadas parciais que aponta a direção de maior crescimento de uma função.", "Gradiente");
+        add(db, "Matemática", "Medida de tendência central que indica o valor mais frequente em um conjunto de dados.", "Moda");
+        add(db, "Matemática", "Objeto com magnitude e direção, usado para representar grandezas físicas.", "Vetor");
+        add(db, "Matemática", "Valor associado a uma matriz que indica escalas de transformação e critérios de invertibilidade.", "Determinante");
+        add(db, "Matemática", "Ramo que estuda arranjos, permutações e combinações de elementos.", "Combinatória");
 
         // PORTUGUÊS
         add(db, "Português", "Movimento literário do século XIX, marcado pela valorização das emoções, da natureza e da identidade nacional. No Brasil, teve fases indianista, ultrarromântica e condoreira, influenciando fortemente a construção da ideia de \"nação\".", "ROMANTISMO");
@@ -182,6 +216,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Português", "Raciocínio ou evidência usada para sustentar uma tese ou posição. Base lógica sobre a qual uma afirmação se estabelece.", "Argumento");
         add(db, "Português", "Repetição desnecessária de ideias já expressas. Torna o texto verboso e prejudica a clareza da comunicação.", "Redundância");
         add(db, "Português", "Unidade mínima de som de uma língua. Diferente de letra, pois um fonema pode ser representado por diferentes letras.", "Fonema");
+        add(db, "Português", "Figura que estabelece comparação implícita entre termos, criando sentidos novos por analogia.", "Metáfora");
+        add(db, "Português", "Recurso que atribui ações ou qualidades humanas a seres inanimados.", "Personificação");
+        add(db, "Português", "Construção retórica que aproxima ideias opostas para realçar contrastes.", "Antítese");
+        add(db, "Português", "Princípio textual que garante a consistência lógica entre ideias.", "Coerência");
+        add(db, "Português", "Relação entre textos que dialogam por citação, alusão ou paródia.", "Intertextualidade");
+        add(db, "Português", "Repetição de sons consonantais que cria musicalidade.", "Aliteração");
+        add(db, "Português", "Uso de palavras que imitam sons naturais.", "Onomatopeia");
+        add(db, "Português", "Estudo da acentuação, entonação e duração dos sons na fala.", "Prosódia");
+        add(db, "Português", "Termo que admite múltiplos sentidos conforme o contexto.", "Polissemia");
 
         // INGLÊS
         add(db, "Inglês", "Science that studies human behavior and mental processes. It analyzes emotions, thoughts, and actions to understand how individuals and groups interact with and respond to their environment.", "PSYCHOLOGY");
@@ -209,6 +252,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Inglês", "Unit of written text dealing with a single topic or idea. Contains a main point supported by relevant details and examples.", "Paragraph");
         add(db, "Inglês", "Exchange of information, ideas, or feelings between individuals. Can be verbal, non-verbal, or written in various contexts.", "Communication");
         add(db, "Inglês", "Converting text from one language to another while preserving meaning. Requires understanding cultural nuances and linguistic differences.", "Translation");
+        add(db, "Inglês", "Aspect of language focusing on how sounds are produced and perceived.", "Pronunciation");
+        add(db, "Inglês", "Skill involving the comprehension of spoken language in various contexts.", "Listening");
+        add(db, "Inglês", "Oral ability to convey ideas clearly and interact in real time.", "Speaking");
+        add(db, "Inglês", "Receptive skill that decodes written texts and infers meaning.", "Reading");
+        add(db, "Inglês", "Part of speech that links words, phrases, or clauses.", "Conjunction");
+        add(db, "Inglês", "Grammatical category that locates actions in time.", "Tense");
+        add(db, "Inglês", "Grammatical unit containing a subject and predicate.", "Clause");
+        add(db, "Inglês", "Word with opposite meaning to another.", "Antonym");
+        add(db, "Inglês", "Unit of pronunciation forming part of a word’s rhythm.", "Syllable");
 
         // FÍSICA
         add(db, "Física", "Parte da física que estuda cargas elétricas em movimento e os efeitos que produzem, como correntes, campos magnéticos e circuitos. Fundamental para entender o funcionamento de motores, geradores e eletrônicos.", "ELETRODINAMICA");
@@ -236,6 +288,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Física", "Dimensão na qual eventos ocorrem em sequência. Medido em segundos, minutos, horas e outros intervalos padronizados.", "Tempo");
         add(db, "Física", "Trajetória curved seguida por um objeto em torno de outro. Resultado do equilíbrio entre velocidade tangencial e atração gravitacional.", "Órbita");
         add(db, "Física", "Dimensão tridimensional onde todos os objetos existem. Infinito e intangível, sendo o palco para todos os fenômenos físicos.", "Espaço");
+        add(db, "Física", "Princípio segundo o qual um corpo tende a manter seu estado de repouso ou movimento retilíneo uniforme.", "Inércia");
+        add(db, "Física", "Grandeza que relaciona força e intervalo de tempo.", "Impulso");
+        add(db, "Física", "Força exercida perpendicularmente por um fluido ou gás sobre uma superfície.", "Pressão");
+        add(db, "Física", "Capacidade de realizar trabalho ou produzir transformações.", "Energia");
+        add(db, "Física", "Número de oscilações por unidade de tempo.", "Frequência");
+        add(db, "Física", "Deslocamento máximo em relação à posição de equilíbrio.", "Amplitude");
+        add(db, "Física", "Processo pelo qual um campo variável gera outro campo.", "Indução");
+        add(db, "Física", "Propriedade de um material conduzir corrente elétrica ou calor.", "Condutividade");
+        add(db, "Física", "Momento de uma força que tende a produzir rotação em torno de um eixo.", "Torque");
 
         // QUÍMICA
         add(db, "Química", "Elemento químico essencial para a vida, presente em moléculas orgânicas como carboidratos, lipídios, proteínas e ácidos nucleicos. Possui grande capacidade de formar cadeias e anéis, permitindo diversidade molecular.", "CARBONO");
@@ -263,6 +324,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Química", "Substância dissolvida em um solvente. Presente em menor quantidade e determina as propriedades da solução.", "Soluto");
         add(db, "Química", "Estado físico da matéria com forma e volume definidos. Moléculas vibram em posições fixas, estruturando-se em padrões.", "Sólido");
         add(db, "Química", "Elemento químico que conduz eletricidade e calor. Geralmente brilhante, maleável e dúctil em temperatura ambiente.", "Metal");
+        add(db, "Química", "Espécie que acelera uma reação ao reduzir a energia de ativação sem ser consumida.", "Catalisador");
+        add(db, "Química", "Macromolécula formada por unidades repetidas, com propriedades versáteis.", "Polímero");
+        add(db, "Química", "Fenômeno em que compostos com mesma fórmula molecular têm arranjos diferentes.", "Isomeria");
+        add(db, "Química", "Processo em que um ácido e uma base reagem formando sal e água.", "Neutralização");
+        add(db, "Química", "Formação de sólido insolúvel a partir de uma solução durante uma reação.", "Precipitação");
+        add(db, "Química", "Procedimento analítico que determina concentração por reação de volume conhecido.", "Titulação");
+        add(db, "Química", "Derivado em que um halogênio substitui um hidrogênio em um composto orgânico.", "Haleto");
+        add(db, "Química", "Substância que pode se comportar como ácido ou base conforme o meio.", "Anfótero");
+        add(db, "Química", "Espécie que se dissocia gerando íons e conduz eletricidade em solução.", "Eletrólito");
 
         // ARTE
         add(db, "Arte", "Movimento artístico e cultural do século XVII, marcado pelo exagero, o drama e a teatralidade. Nas artes plásticas e na arquitetura, valoriza o contraste de luz e sombra, ornamentação rica e emoções intensas, frequentemente ligado à religião.", "BARROCO");
@@ -290,6 +360,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Arte", "Arte de projetar e construir espaços e estruturas. Combina funcionalidade, estética e materiais em harmonia com o ambiente.", "Arquitetura");
         add(db, "Arte", "Técnica de representação que cria ilusão de profundidade no desenho. Utiliza pontos de fuga para simular espaço tridimensional.", "Perspectiva");
         add(db, "Arte", "Estilo artístico que não busca representação realista de objetos. Enfatiza formas, cores, linhas e texturas para expressar emoções e ideias.", "Abstrato");
+        add(db, "Arte", "Movimento do início do século XX que explorou cores intensas e pinceladas livres.", "Fauvismo");
+        add(db, "Arte", "Vanguarda que celebrou máquinas, velocidade e modernidade.", "Futurismo");
+        add(db, "Arte", "Escola do século XX que integrou arte, design e arquitetura com enfoque funcional.", "Bauhaus");
+        add(db, "Arte", "Técnica que reúne recortes, imagens e materiais diversos em novas composições.", "Colagem");
+        add(db, "Arte", "Prática artística que ocupa o espaço e envolve o espectador.", "Instalação");
+        add(db, "Arte", "Linguagem que utiliza o corpo, o tempo e a ação como matéria artística.", "Performance");
+        add(db, "Arte", "Estilo de transição entre o Renascimento e o Barroco.", "Maneirismo");
+        add(db, "Arte", "Linguagem visual que utiliza pigmentos sobre suportes diversos.", "Pintura");
+        add(db, "Arte", "Linguagem tridimensional que modela, talha ou monta materiais.", "Escultura");
 
         // EDUCAÇÃO FÍSICA
         add(db, "Educação Física", "Manifestação cultural e artística brasileira que combina luta, dança, música e acrobacias. Surgiu como forma de resistência de povos africanos escravizados, desenvolvendo habilidades físicas como força, flexibilidade e coordenação, além de promover socialização e expressão cultural.", "CAPOEIRA");
@@ -317,6 +396,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Educação Física", "Habilidade de mudar de direção rapidamente com controle. Essencial em esportes que exigem movimentos rápidos e precisos.", "Agilidade");
         add(db, "Educação Física", "Capacidade do organismo de manter esforço prolongado. Envolve resistência cardiovascular, muscular e mental.", "Resistência");
         add(db, "Educação Física", "Habilidade de manter o corpo em posição estável. Depende de visão, propriocepção e sistema vestibular.", "Equilíbrio");
+        add(db, "Educação Física", "Conjunto de exercícios iniciais que elevam gradualmente a temperatura corporal e preparam músculos e articulações.", "Aquecimento");
+        add(db, "Educação Física", "Prática que aumenta a amplitude de movimento e a elasticidade muscular.", "Alongamento");
+        add(db, "Educação Física", "Capacidade de sincronizar movimentos corporais com precisão.", "Coordenação");
+        add(db, "Educação Física", "Estado físico geral que integra força, resistência e mobilidade.", "Condicionamento");
+        add(db, "Educação Física", "Alinhamento corporal adequado que distribui cargas e economiza energia.", "Postura");
+        add(db, "Educação Física", "Ingestão adequada de líquidos para manter equilíbrio hídrico.", "Hidratação");
+        add(db, "Educação Física", "Processo ventilatório que garante trocas gasosas eficientes durante o esforço.", "Respiração");
+        add(db, "Educação Física", "Método de treino que alterna estações com exercícios variados.", "Circuito");
+        add(db, "Educação Física", "Conjunto de reações que convertem nutrientes em energia para o trabalho muscular.", "Metabolismo");
 
         // FILOSOFIA
         add(db, "Filosofia", "Filósofo francês conhecido como \"pai da filosofia moderna\", defensor do pensamento racional e da dúvida metódica. Sua famosa frase \"Penso, logo existo\" representa a busca por fundamentos seguros para o conhecimento.", "DESCARTES");
@@ -344,6 +432,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Filosofia", "Filosofia que valoriza prazer e ausência de dor. Contrário à crença popular, defende prazeres simples e moderados.", "Epicurismo");
         add(db, "Filosofia", "Filosofia que enfatiza liberdade e responsabilidade individual. Sustenta que existência precede essência e cada um cria seu próprio significado.", "Existencialismo");
         add(db, "Filosofia", "Método de raciocínio que avança por tese, antítese e síntese. Fundamental para compreender o desenvolvimento histórico e as contradições.", "Dialética");
+        add(db, "Filosofia", "Pensador ateniense autor de diálogos que investigam justiça, conhecimento e política.", "Platão");
+        add(db, "Filosofia", "Doutrina ética que coloca o prazer como bem fundamental.", "Hedonismo");
+        add(db, "Filosofia", "Postura intelectual que suspende o juízo diante da impossibilidade de certezas absolutas.", "Ceticismo");
+        add(db, "Filosofia", "Corrente que propõe método científico e valorização dos fatos observáveis.", "Positivismo");
+        add(db, "Filosofia", "Abordagem que descreve a experiência vivida antes de teorias explicativas.", "Fenomenologia");
+        add(db, "Filosofia", "Ramo que investiga o ser, a realidade e suas categorias fundamentais.", "Metafísica");
+        add(db, "Filosofia", "Área que estuda a natureza, as fontes e os limites do conhecimento.", "Epistemologia");
+        add(db, "Filosofia", "Teoria ética centrada em deveres e princípios independentemente de consequências.", "Deontologia");
+        add(db, "Filosofia", "Perspectiva que questiona sentidos e valores estabelecidos.", "Nihilismo");
 
         // SOCIOLOGIA
         add(db, "Sociologia", "Teoria social e econômica baseada nas ideias de Karl Marx, que analisa a luta de classes e a desigualdade na sociedade. Propõe que a história seja marcada por conflitos entre quem detém os meios de produção e quem realiza o trabalho.", "MARXISMO");
@@ -371,6 +468,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         add(db, "Sociologia", "Processo pelo qual indivíduos aprendem normas e valores culturais. Ocorre através de família, escola, mídia e outras instituições.", "Socialização");
         add(db, "Sociologia", "Mecanismo pelo qual a sociedade regula comportamentos de seus membros. Pode ser exercido através de normas, leis, sanções e vigilância.", "Controle");
         add(db, "Sociologia", "Movimento de indivíduos entre posições diferentes na hierarquia social. Pode ser vertical (mudança de classe) ou horizontal (mudança de ocupação).", "Mobilidade");
+        add(db, "Sociologia", "Ideia segundo a qual recompensas sociais devem refletir esforço e talento individuais.", "Meritocracia");
+        add(db, "Sociologia", "Processo de separação espacial ou social de grupos com base em raça, classe ou origem.", "Segregação");
+        add(db, "Sociologia", "Comportamento que viola normas sociais vigentes.", "Desvio");
+        add(db, "Sociologia", "Conjunto de disposições incorporadas que orientam práticas e gostos.", "Habitus");
+        add(db, "Sociologia", "Forma de organização racional-legal com regras formais, hierarquia e impessoalidade.", "Burocracia");
+        add(db, "Sociologia", "Sociólogo alemão que analisou ação social, dominação e racionalização.", "Weber");
+        add(db, "Sociologia", "Estrutura de camadas hierárquicas baseadas em renda, prestígio e poder.", "Estratificação");
+        add(db, "Sociologia", "Perspectiva que valoriza convivência de diferentes culturas com respeito e reconhecimento.", "Multiculturalismo");
+        add(db, "Sociologia", "Atitude hostil em relação a estrangeiros ou grupos percebidos como 'de fora'.", "Xenofobia");
+
     }
 
 
